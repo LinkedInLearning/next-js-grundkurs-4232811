@@ -1,0 +1,7 @@
+.test {
+  color: greenyellow;
+}
+
+.test:hover {
+  color: pink;
+}
