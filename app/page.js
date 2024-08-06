@@ -1,16 +1,7 @@
-'use client';
-
 export default function Home() {
   return (
-    <main className="test">
+    <main>
       Hallo <span>Next.js</span>
-      <style jsx>
-        {`
-          span {
-            color: pink;
-          }
-        `}
-      </style>
     </main>
   );
 }
