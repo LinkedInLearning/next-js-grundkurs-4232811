@@ -1,5 +1,5 @@
+import ArticleList from '@/components/ArticleList';
 import { promises as fs } from 'fs';
-import Link from 'next/link';
 
 export default async function Blog() {
   const jsonContent = await fs.readFile(
@@ -12,15 +12,7 @@ export default async function Blog() {
 
   return (
     <section>
-      <ul className='flex flex-col gap-2'>
-        {articles.map((article, i) => {
-          return <li key={i}>
-            <Link href={`/blog/${i}`} className='underline'>
-              {article.title}
-            </Link>
-          </li>
-        })}
-      </ul>
+      <ArticleList articles={articles} />
     </section>
   );
 }
