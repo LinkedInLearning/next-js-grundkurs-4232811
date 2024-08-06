@@ -2,8 +2,9 @@ export default function Home() {
   return (
     <main>
       <h1 className="font-bold text-xl">Startseite</h1>
-      <p className="big-underline">
-        Hallo <span>Next.js</span>
+      <p className="text-lg">
+        Willkommen auf meiner Website,
+        besuche doch gerne auch meinen Blog.
       </p>
     </main>
   );
