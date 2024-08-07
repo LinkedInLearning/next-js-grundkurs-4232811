@@ -1,28 +1,30 @@
-import { NextResponse } from 'next/server'
-
+import { NextResponse } from "next/server";
 
 export function middleware(request) {
-  const basicAuth = request.headers.get("authorization");
-  const url = request.nextUrl;
-  const mustProtect = url.pathname.startsWith('/blog/new');
+  const nextUrl = request.nextUrl;
+  const pathname = nextUrl.pathname;
 
-  if (mustProtect) {
-    if (!basicAuth) return NextResponse.rewrite(
-      new URL('/basic-auth', request.url)
-    );
+  if (pathname.startsWith('/blog/new')) {
+    const user = process.env.BASIC_AUTH_USER;
+    const pw = process.env.BASIC_AUTH_PW;
 
-    const authValue = basicAuth.split(" ")[1];
-    const [user, pwd] = atob(authValue).split(":");
+    const basicAuth = request.headers.get("authorization");
 
-    const validUser = process.env.BASIC_AUTH_USER;
-    const validPassWord = process.env.BASIC_AUTH_PW;
-
-    if (user === validUser && pwd === validPassWord) {
-      return NextResponse.next();
-    } else {
+    if (!basicAuth) {
       return NextResponse.rewrite(
-        new URL('/basic-auth', request.url)
-      );
+        new URL('/authorize', request.url)
+      )
+    } else {
+      const authValue = basicAuth.split(" ")[1];
+      const [_user, _pw] = atob(authValue).split(":");
+
+      if (user == _user && pw == _pw) {
+        return NextResponse.next();
+      } else {
+        return NextResponse.rewrite(
+          new URL('/authorize', request.url)
+        )
+      }
     }
   }
 }

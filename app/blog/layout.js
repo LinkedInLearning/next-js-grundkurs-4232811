@@ -1,14 +1,13 @@
 import ArticleList from '@/components/ArticleList';
 import { promises as fs } from 'fs';
+import { dbConnection } from './db';
 
 export default async function BlogLayout({ children }) {
-  const jsonContent = await fs.readFile(
-    process.cwd() +
-    '/app/blog/articles.json',
-    'utf-8'
-  )
+  const db = await dbConnection();
 
-  const articles = JSON.parse(jsonContent).slice(0, 3);
+  const articles = await db.Article.findAll({
+    limit: 3
+  })
 
   return <div>
     {children}
