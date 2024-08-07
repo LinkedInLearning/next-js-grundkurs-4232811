@@ -2,10 +2,23 @@ import { promises as fs } from 'fs';
 import Image from 'next/image';
 import { dbConnection } from '../db';
 
-export default async function ArticleView({ params }) {
+
+
+export async function generateMetadata({ params }) {
   const db = await dbConnection();
   const Article = db.Article;
 
+  const article = await Article.findByPk(params.id);
+
+  return {
+    title: article.title,
+    description: 'Blogbeitrag von David'
+  }
+}
+
+export default async function ArticleView({ params }) {
+  const db = await dbConnection();
+  const Article = db.Article;
 
   const article = await Article.findByPk(params.id)
 
