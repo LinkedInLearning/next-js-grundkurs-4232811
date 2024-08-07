@@ -4,16 +4,11 @@ import { dbConnection } from './db';
 
 export default async function Blog({ searchParams }) {
   const db = await dbConnection();
-
-  const jsonContent = await fs.readFile(
-    process.cwd() +
-    '/app/blog/articles.json',
-    'utf-8'
-  )
+  const Article = db.Article;
 
   const searchValue = searchParams.searchValue ?? '';
 
-  const articles = JSON.parse(jsonContent)
+  const articles = (await Article.findAll())
     .filter(article => {
       return article.title
         .toLowerCase()

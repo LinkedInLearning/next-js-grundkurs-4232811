@@ -1,15 +1,13 @@
 import { promises as fs } from 'fs';
 import Image from 'next/image';
+import { dbConnection } from '../db';
 
 export default async function ArticleView({ params }) {
-  const jsonContent = await fs.readFile(
-    process.cwd() +
-    '/app/blog/articles.json',
-    'utf-8'
-  )
+  const db = await dbConnection();
+  const Article = db.Article;
 
-  const articles = JSON.parse(jsonContent);
-  const article = articles[params.index];
+
+  const article = await Article.findByPk(params.id)
 
   return <article>
     {article.image && <div className='relative aspect-video mb-3'>
