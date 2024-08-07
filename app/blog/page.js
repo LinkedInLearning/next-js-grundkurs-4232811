@@ -1,7 +1,10 @@
 import ArticleList from '@/components/ArticleList';
 import { promises as fs } from 'fs';
+import { dbConnection } from './db';
 
 export default async function Blog({ searchParams }) {
+  const db = await dbConnection();
+
   const jsonContent = await fs.readFile(
     process.cwd() +
     '/app/blog/articles.json',
