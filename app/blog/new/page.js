@@ -1,8 +1,9 @@
+import { saveAction } from "./save/actions";
+
 export default function NewArticle() {
   return (
     <form className="flex flex-col gap-3"
-      action='/blog/new/save'
-      method="POST"
+      action={saveAction}
     >
       <input
         name="title"
