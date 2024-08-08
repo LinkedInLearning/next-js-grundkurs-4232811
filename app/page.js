@@ -1,3 +1,5 @@
+import { Toggle } from "@/components/Toggle";
+
 export default function Home() {
   return (
     <main>
@@ -6,6 +8,8 @@ export default function Home() {
         Willkommen auf meiner Website,
         besuche doch gerne auch meinen Blog.
       </p>
+
+      <Toggle />
     </main>
   );
 }
