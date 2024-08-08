@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import Image from 'next/image';
 import { dbConnection } from '../db';
-
+import { notFound } from 'next/navigation';
 
 
 export async function generateMetadata({ params }) {
@@ -9,6 +9,10 @@ export async function generateMetadata({ params }) {
   const Article = db.Article;
 
   const article = await Article.findByPk(params.id);
+
+  if (!article) {
+    notFound();
+  }
 
   return {
     title: article.title,
@@ -19,8 +23,11 @@ export async function generateMetadata({ params }) {
 export default async function ArticleView({ params }) {
   const db = await dbConnection();
   const Article = db.Article;
-
   const article = await Article.findByPk(params.id)
+
+  if (!article) {
+    notFound();
+  }
 
   return <article>
     {article.image && <div className='relative aspect-video mb-3'>
