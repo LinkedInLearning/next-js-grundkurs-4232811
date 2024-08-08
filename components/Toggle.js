@@ -1,8 +1,8 @@
-'use client'
+'use client';
 import { useState } from "react";
 
 export function Toggle() {
-  const [visible, setVisible] = useState();
+  const [visible, setVisible] = useState(false);
 
   return (
     <div className='mt-6'>
@@ -15,7 +15,7 @@ export function Toggle() {
 
       {visible &&
         <div className="p-2 mt-4 bg-red-300">
-          Das Geheimnis
+          {process.env.NEXT_PUBLIC_COUPON_CODE}
         </div>
       }
     </div>
