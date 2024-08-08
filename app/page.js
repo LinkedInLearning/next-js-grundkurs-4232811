@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <main>
-      <h1 className="font-bold text-xl">Startseite</h1>
-      <p className="big-underline">
+      <h1>Startseite</h1>
+      <p>
         Hallo <span>Next.js</span>
       </p>
     </main>
