@@ -4,7 +4,11 @@ Dies ist das Repository für den **LinkedIn Learning** Kurs `Next.js Grundkurs`.
 
 ![COURSENAME][lil-thumbnail-url] 
 
-[COURSEDESCRIPTION]
+Das Webentwicklungs-Framework Next.js bietet Ihnen alle Vorteile eines serverseitigen Rendering-Tools mit der Geschwindigkeit und Einfachheit einer Single-Page-App. Mit diesem beliebten, auf React basierenden Tool können Sie eine komplette Webanwendung von Grund auf in JavaScript erstellen, verwalten und anpassen, Ihren Entwicklungsprozess erheblich vereinfachen und für schnellere Ladezeiten und einer effizienteren Performance Ihrer Website sorgen.
+
+Begleiten Sie Web-Architekt David Lorenz durch diesen LinkedIn Learning-Kurs, in dem er Ihnen anhand eines Blogprojekts die beeindruckenden Möglichkeiten von Next.js zeigt.
+Sie lernen verschiedene Styling-Methoden kennen und verstehen im Nu Datei-basiertes Routing und Caching. Weitere Kapitel widmen sich der Datenbankanbindung und SEO-Optimierung.
+
 
 ## Anleitung
 
@@ -29,28 +33,17 @@ Dieses Problem lösen Sie wie folgt:
 
 ## Installation
 
-1. Um diese Übungsdateien nutzen zu können, müssen Sie folgendes installiert haben:
-   - [list of requirements for course]
-2. Klonen Sie das Repository in Ihre lokale Maschine unter Verwendung von terminal (Mac), CMD (Windows) oder ein anderes Werkzeug mit grafischer Bedienoberfläche wie SourceTree.
-3. [Course-specific instructions]
+1. Klonen Sie das Repository in Ihre lokale Maschine unter Verwendung von terminal (Mac), CMD (Windows) oder ein anderes Werkzeug mit grafischer Bedienoberfläche wie SourceTree.
+
 
 ### Autor
 
 **David Lorenz**
 
-_[Berufsbezeichnung hier eintragen]_
+_Frontend-Architekt_
 
 Sehen Sie sich andere Kurse des Autors auf [LinkedIn Learning](https://www.linkedin.com/learning/instructors/david-lorenz) an.
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
-[lil-course-url]: https://www.linkedin.com
-[lil-thumbnail-url]: https:
-
-[1]: # (End of DE-Instruction ###############################################################################################)
-
-
-[0]: # (Replace these placeholder URLs with actual course URLs) 
-[lil-course-url]: https://www.linkedin.com 
-[lil-thumbnail-url]: https:// 
-
-[1]: # (End of BP-Instruction ###############################################################################################) 
+[lil-course-url]: https://www.linkedin.com/learning/next-js-grundkurs
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQHJx9n0cgVlGQ/learning-public-crop_675_1200/learning-public-crop_675_1200/0/1732012587759?e=2147483647&v=beta&t=JEvEm5ov1gnglwDC27D6qkmedclJzvYeN9QvTtBzKvI
